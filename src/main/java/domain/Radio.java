@@ -17,7 +17,7 @@ public class Radio {
         if (newCurrentStation > 9) {
             currentStation = 0;
         }
-        if (newCurrentStation < 0) {
+        else if (newCurrentStation < 0) {
             currentStation = 9;
         } else {
             currentStation = newCurrentStation;
@@ -27,19 +27,19 @@ public class Radio {
 
     public int next() {
 
-        return currentStation = (currentStation >= 9) ? 0 : (currentStation + 1);
+        return currentStation = (currentStation >= 9) ? 0 : (currentStation += 1);
     }
 
     public int prev() {
 
-        return currentStation = (currentStation <= 0) ? 9 : (currentStation - 1);
+        return currentStation = (currentStation <= 0) ? 9 : (currentStation -= 1);
     }
 
     public int setVolume(int newVolume) {
         if (newVolume > 10) {
             volume = 10;
         }
-        if (newVolume < 0) {
+        else if (newVolume < 0) {
             volume = 0;
         } else {
             volume = newVolume;
