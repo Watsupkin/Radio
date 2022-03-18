@@ -1,5 +1,10 @@
 package domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class Radio {
     private int currentStation;
     private int volume;
