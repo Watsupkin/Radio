@@ -1,5 +1,10 @@
 package domain;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
 public class Radio {
     private int currentStation;
     private int volume;
@@ -14,11 +19,11 @@ public class Radio {
     }
 
     public int setStation(int newCurrentStation) {
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > 10) {
             currentStation = 0;
         }
         else if (newCurrentStation < 0) {
-            currentStation = 9;
+            currentStation = 10;
         } else {
             currentStation = newCurrentStation;
         }
@@ -27,17 +32,17 @@ public class Radio {
 
     public int next() {
 
-        return currentStation = (currentStation >= 9) ? 0 : (currentStation += 1);
+        return currentStation = (currentStation >= 10) ? 0 : (currentStation += 1);
     }
 
     public int prev() {
 
-        return currentStation = (currentStation <= 0) ? 9 : (currentStation -= 1);
+        return currentStation = (currentStation <= 0) ? 10 : (currentStation -= 1);
     }
 
     public int setVolume(int newVolume) {
-        if (newVolume > 10) {
-            volume = 10;
+        if (newVolume > 100) {
+            volume = 100;
         }
         else if (newVolume < 0) {
             volume = 0;
@@ -48,7 +53,7 @@ public class Radio {
     }
 
     public int plusVolume() {
-        return volume = (volume >= 10) ? 10 : (volume += 1);
+        return volume = (volume >= 100) ? 100 : (volume += 1);
     }
 
     public int minusVolume() {
