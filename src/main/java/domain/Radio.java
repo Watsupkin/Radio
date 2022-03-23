@@ -4,10 +4,13 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@AllArgsConstructor
 public class Radio {
     private int currentStation;
     private int volume;
+
+    public Radio(int currentStation) {
+        this.currentStation = currentStation;
+    }
 
     public int getCurrentStation() {
 
@@ -21,8 +24,7 @@ public class Radio {
     public int setStation(int newCurrentStation) {
         if (newCurrentStation > 10) {
             currentStation = 0;
-        }
-        else if (newCurrentStation < 0) {
+        } else if (newCurrentStation < 0) {
             currentStation = 10;
         } else {
             currentStation = newCurrentStation;
@@ -43,8 +45,7 @@ public class Radio {
     public int setVolume(int newVolume) {
         if (newVolume > 100) {
             volume = 100;
-        }
-        else if (newVolume < 0) {
+        } else if (newVolume < 0) {
             volume = 0;
         } else {
             volume = newVolume;
